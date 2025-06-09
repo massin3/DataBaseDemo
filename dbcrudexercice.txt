@@ -1,0 +1,42 @@
+-- Création de la base de données
+CREATE DATABASE IF NOT EXISTS gestion_etudiants;
+USE gestion_etudiants;
+
+-- Création de la table des étudiants
+
+CREATE TABLE IF NOT EXISTS etudiants (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(20),
+    prenom VARCHAR(20),
+    email VARCHAR(150),
+    classe VARCHAR(1),
+    age INT,
+);
+
+-- Insertion d'exemples d'étudiants
+
+INSERT INTO etudiants (nom, prenom, email, classe, age) VALUES
+
+('Bennani', 'Salma', 'salma.bennani@gmail.com', '1ère année', 20),
+('Massin', 'Abellouch', 'fastestm@gmail.com', '2ème année', 26),
+('Yara', 'Benje', 'yarallounen@gmail.com', '1ère année', 22);
+
+--Lister tous les étudiants
+
+SELECT * FROM etudiants;
+
+--Rechercher un étudiant par nom
+
+SELECT * FROM etudiants WHERE nom = 'Bennani';
+
+--Modifier la classe d’un étudiant
+
+UPDATE etudiants SET classe = '3ème année' WHERE id = 1;
+
+--Modifier l’email d’un étudiant
+
+UPDATE etudiants SET email = 'nouvel.email@email.com' WHERE id = 2;
+
+--Supprimer un étudiant par ID
+
+DELETE FROM etudiants WHERE id = 3;
