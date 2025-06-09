@@ -1,0 +1,12 @@
+CREATE DATABASE MyDataBase;
+
+USE MyDataBase;
+
+CREATE TABLE Users (
+    name VARCHAR(100),
+    email VARCHAR(150),
+    age INT
+);
+
+INSERT INTO Users (name, email, age)
+VALUES ('Massin', 'fastestm@gmail.com', 25);
